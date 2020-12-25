@@ -1,0 +1,66 @@
+﻿<Window x:Class="MinecraftMETACreater.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MinecraftMETACreater"
+        mc:Ignorable="d"
+        Title="皮肤材质包生成器" Height="350
+        " Width="600"
+        ResizeMode="CanMinimize">
+    <Grid Background="WhiteSmoke">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="225*"/>
+            <ColumnDefinition Width="225*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Height="30" VerticalAlignment="Top" Margin="10,15,10,0" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="NumBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Margin="490,10,0,0" Width="22"/>
+            <TextBlock x:Name="VerText" TextWrapping="Wrap" Text="请选择适用的版本" FontSize="18" TextAlignment="Center" HorizontalAlignment="Left" Margin="10,3,0,3" Height="24" VerticalAlignment="Center"/>
+            <ComboBox x:Name="VerBox" HorizontalAlignment="Right" Width="138" VerticalContentAlignment="Center" VerticalAlignment="Center" Height="30" SelectionChanged="VerBox_SelectionChanged" Margin="0,0,9,0" BorderBrush="#FFACACAC" >
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+            </ComboBox>
+        </Grid>
+
+        <Grid Height="30" VerticalAlignment="Top" Margin="10,150,10,0" Grid.ColumnSpan="2">
+            <TextBlock x:Name="FolderText" TextWrapping="Wrap" Text="保存路径" Margin="10,3,0,3" TextAlignment="Center" Foreground="Black" Height="24" VerticalAlignment="Center" FontSize="18" HorizontalAlignment="Left"/>
+            <TextBox x:Name="FolderBox" TextWrapping="NoWrap" AcceptsReturn="False" VerticalContentAlignment="Center" Initialized="FolderBox_Initialized" HorizontalAlignment="Right" Width="434" VerticalAlignment="Center" Height="30" SourceUpdated="FolderBox_SourceUpdated" Margin="0,0,38,0" Foreground="Black" SelectionBrush="#FFABADB3"/>
+            <Button x:Name="FolderButton" Content="..." Click="FolderButton_Click" HorizontalAlignment="Right" Width="30" Margin="0,0,10,0"/>
+        </Grid>
+        <Grid Height="30" VerticalAlignment="Top" Margin="10,105,10,0" Grid.ColumnSpan="2">
+            <TextBlock x:Name="SkinFolderText" TextWrapping="Wrap" Text="皮肤路径" Margin="10,3,0,3" TextAlignment="Center" Foreground="Black" Height="24" VerticalAlignment="Center" FontSize="18" HorizontalAlignment="Left"/>
+            <TextBox x:Name="SkinFolderBox" TextWrapping="NoWrap" AcceptsReturn="False" VerticalContentAlignment="Center" Initialized="SkinFolderBox_Initialized" HorizontalAlignment="Right" Width="434" VerticalAlignment="Center" Height="30" SourceUpdated="FolderBox_SourceUpdated" Margin="0,0,38,0" Foreground="Black" SelectionBrush="#FFABADB3"/>
+            <Button x:Name="SkinFolderButton" Content="..." Click="SkinFolderButton_Click" HorizontalAlignment="Right" Width="30" Margin="0,0,10,0"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="15" VerticalAlignment="Top" Width="594" Margin="0,90,0,0" Grid.ColumnSpan="2"/>
+        <Grid HorizontalAlignment="Left" Height="15" VerticalAlignment="Top" Width="594" Margin="0,135,0,0" Grid.ColumnSpan="2"/>
+        <Grid HorizontalAlignment="Left" Height="15" VerticalAlignment="Top" Width="594" Grid.ColumnSpan="2"/>
+        <Grid HorizontalAlignment="Left" Height="15" VerticalAlignment="Top" Width="594" Grid.ColumnSpan="2" Margin="0,45,0,0"/>
+        <Grid Height="30" VerticalAlignment="Top" Margin="10,60,10,0" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="IDBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Margin="490,10,0,0" Width="22"/>
+            <TextBlock x:Name="SkinSizeText" TextWrapping="Wrap" FontSize="18" TextAlignment="Center" HorizontalAlignment="Left" Margin="10,3,0,3" Height="24" VerticalAlignment="Center" Text="玩家模型"/>
+            <ComboBox x:Name="SkinSizeBox" HorizontalAlignment="Right" Width="138" VerticalContentAlignment="Center" VerticalAlignment="Center" Height="30" SelectionChanged="SkinSizeBox_SelectionChanged" Margin="0,0,9,0" BorderBrush="#FFACACAC" Foreground="#F7000000" >
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+            </ComboBox>
+        </Grid>
+        <Grid Margin="10,211,10,10" Grid.ColumnSpan="2">
+            <Button x:Name="BuildButton" Content="生成!" Margin="190,34,190,0" Click="BuildButton_Click" Height="50" VerticalAlignment="Top" BorderBrush="#FF707070"/>
+        </Grid>
+
+    </Grid>
+</Window>
